@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "wemos-awsiot-test1"
+		},
+		{
+			"path": "wemos-awsiot-button"
+		},
+		{
+			"path": "wemos-awsiot-test2"
+		},
+		{
+			"path": "wemos-bearssl-example"
+		},
+		{
+			"path": "wemos-ssl-tests"
+		},
+		{
+			"path": "wemos-mqtts-test"
+		},
+		{
+			"path": "wemos-mqtt-test"
+		}
+	]
+}
