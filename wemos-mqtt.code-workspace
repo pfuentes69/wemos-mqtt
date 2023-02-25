@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "wemos-mqtt-test"
+		},
+		{
+			"path": "wemos-mqtt-tls-test"
 		}
 	]
 }
