@@ -254,13 +254,31 @@ void reconnect() {
 //
 void setup() {
   Serial.begin(115200);
-  setup_wifi();
   dht.setup(D4, DHTesp::DHT11); // Connect DHT sensor to GPIO 17
   pinMode(buttonPin,  INPUT_PULLUP);
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 64x48)
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+
+  // Config WiFi
+  display.clearDisplay();
+  display.setCursor(0,0);
+  display.print("Init WiFi");
+  display.display();
+  setup_wifi();
 
   // Set time
+  display.clearDisplay();
+  display.setCursor(0,0);
+  display.print("Set time");
+  display.display();
   setClock();
+
+  // Init MQTT
+  display.clearDisplay();
+  display.setCursor(0,0);
+  display.print("Init MQTT");
+  display.display();
 
 // This doesn't work with ESP32, seems related to BearSSL
   // Load CA cert into trust store
@@ -325,8 +343,6 @@ void loop() {
 
       // Update display
       display.clearDisplay();
-      display.setTextSize(1);
-      display.setTextColor(WHITE);
       display.setCursor(0,0);
       display.print("T = ");
       display.print(temperature,0);
